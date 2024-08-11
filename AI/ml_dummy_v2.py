@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-@author: Weha
-"""
-
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -11,11 +6,11 @@ from tensorflow.keras.layers import Dense, Dropout
 from tensorflow.keras.optimizers import Adam
 
 # Load the dataset
-data = pd.read_csv("/home/ramanujan/git_repos/BMS-DNN/BMS/dataset/synthetic_soc_data.csv")
+data = pd.read_csv("/home/ramanujan/git_repos/BMS-DNN/BMS/dataset/soc_processed_data.csv")
 
 # Split the dataset into features and labels
-X = data.drop("SOC", axis=1)
-y = data["SOC"]
+X = data.drop("SoC Percentage", axis=1)
+y = data["SoC Percentage"]
 
 # Split the data into train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
