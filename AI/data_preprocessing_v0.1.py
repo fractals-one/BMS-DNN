@@ -59,7 +59,7 @@ cycle_type is used to define the column where the cycle type(discharge/charge) i
 cycle_type = "Mode"
 
 #Data is read from csv file based on the column names defined in 'usecols' variable using pandas library
-cycle = pd.read_csv(_input_csv_file_path,usecols=input_column_names,na_values="NaN")
+cycle = pd.read_csv(_input_csv_file_path,usecols=input_column_names)
 cycles = []
 
 #Charge and discharge data is seperated and stored to a different variable cycle_charge and cycle_discharge respectively
@@ -92,42 +92,3 @@ data_out = pd.DataFrame(cycles,columns=output_column_names)
 #Export the data to specified csv file
 data_out.to_csv(_output_csv_file_path)
 print('Done')
-
-"""
-Plotting configs and data processing
-"""
-# Read the different electrical parameters from the csv file, drop the NAN values and store it to a variable names plot_*
-plot_current = cycle["Current, A"].dropna()
-plot_voltage = cycle["Voltage, V"].dropna()
-plot_temperature = cycle["Temperature A1, degC"].dropna()
-plot_AH = cycle["Amp-Hours, AH"].dropna()
-plot_realtime = cycle["Real Time"].dropna()
-plot_mode = cycle["Mode"].dropna()
-# As dataset is a 10 second interval data capture, create a variable with constant values from 0 to length of dataset with 10 seconds interval
-csv_time_seconds = list(range(0,len(plot_current)))
-plot_time = np.array(csv_time_seconds)*10
-# Initialize a plot with 4 subplots in it
-# Plot0 is operation mode vs time
-# Plot1 is voltage vs time
-# Plot2 is current vs time
-# Plot3 is temperature vs time
-# Plot4 is Battery AH capacity vs time
-fig, ax = plt.subplots(5)
-ax[0].plot(plot_time,plot_mode.values, 'tab:cyan')
-ax[0].set_title('Battery operation mode',fontweight='bold')
-ax[0].set(ylabel='Operation mode')
-ax[1].plot(plot_time,plot_voltage.values, 'tab:red')
-ax[1].set_title('Battery voltage',fontweight='bold')
-ax[1].set(ylabel='Voltage in V')
-ax[2].plot(plot_time,plot_current.values, 'tab:green')
-ax[2].set_title('Battery Current',fontweight='bold')
-ax[2].set(ylabel='Current in A')
-ax[3].plot(plot_time,plot_temperature.values, 'tab:blue')
-ax[3].set_title('Battery Temperature',fontweight='bold')
-ax[3].set(ylabel='Temperature in degC')
-ax[4].plot(plot_time,plot_AH.values, 'tab:orange')
-ax[4].set_title('Battery AH',fontweight='bold')
-ax[4].set(xlabel='Time in seconds', ylabel='Capacity in AH')
-plt.subplots_adjust(left=0.051,right=0.981,bottom=0.05,top=0.964,hspace=0.44) #This parameter is used to adjust the subplot parameters like spacing between plots, top spacing etc..
-#plt.subplot_tool()  #This is the tool to adjust the graph parameters realtime and get the values, can also be used to see the default values
-plt.show() #Command to show the plot in a different window
