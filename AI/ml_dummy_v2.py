@@ -2,13 +2,19 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.layers import Dense, Dropout, LSTM, Embedding, RepeatVector, TimeDistributed, Masking
+from keras.callbacks import EarlyStopping, ModelCheckpoint, LambdaCallback
 from tensorflow.keras.optimizers import Adam
+import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+from tensorflow import keras
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 # Load the dataset
 data = pd.read_csv("/home/ramanujan/git_repos/BMS-DNN/BMS/dataset/soc_processed_data.csv")
+data = data.dropna()
 
 # Split the dataset into features and labels
 X = data.drop("SoC Percentage", axis=1)
@@ -16,11 +22,11 @@ y = data["SoC Percentage"]
 
 # Split the data into train and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
 # Scale the features
 scaler = StandardScaler()
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
+
 
 # Define the DNN model
 model = Sequential([
@@ -50,6 +56,7 @@ print(f"Loss on test set: {loss:.4f}")
 
 # Make predictions on the test set
 y_pred = model.predict(X_test_scaled)
+model.summary()
 
 # Create a scatter plot of true SOC values vs predicted SOC values
 fig, ax = plt.subplots(2)
