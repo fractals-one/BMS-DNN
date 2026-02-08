@@ -689,45 +689,46 @@
     }
   ],
   "environment": {
+    "device": "x86_64, , Linux",
     "generated_model": {
-      "generated_time": "2026-02-08T21:58:03+0530",
+      "generated_time": "2026-02-08T22:52:36+0530",
       "model_files": [
         {
           "name": "dnn_model_data_params.h",
-          "signature": "0xe967acba1e8819aff133f2b6467a5454"
+          "signature": "0x2e5eba868c476db762324b3b01d13608"
         },
         {
           "name": "dnn_model_data_params.c",
-          "signature": "0xd32aad81098e783ae446e9ab40f208a1"
+          "signature": "0x75c192472b7321c70c2787be59080ed2"
         },
         {
           "name": "dnn_model_data.h",
-          "signature": "0x48c2561ff9129a43dd2b51ab82a811e0"
+          "signature": "0x5628a2ad2355aaddb5b29a134f61a391"
         },
         {
           "name": "dnn_model_data.c",
-          "signature": "0x8d1d239ad623d1c7c9dc86274dccd62a"
+          "signature": "0xb7b85a2c8ade2ee5f0dc755bc2875a74"
         },
         {
           "name": "dnn_model_config.h",
-          "signature": "0xb2c61f3f72c841b836dd0149cd90f9c5"
+          "signature": "0x4062ebb085adbb97d4d550af01f859b8"
         },
         {
           "name": "dnn_model.h",
-          "signature": "0xacb23714060fa63247af68dd3dafe66b"
+          "signature": "0x619f5ea26de8946125e5c0da125f11aa"
         },
         {
           "name": "dnn_model.c",
-          "signature": "0xc432cc566ecef1382c231be816f7f696"
+          "signature": "0x0901a86129311f8db9e326c3b618f880"
         }
       ],
       "name": "dnn_model"
     },
-    "network_signature": "0xd16d7b311b4fa871",
+    "network_signature": "0x067793ac560f0b8a",
     "test_name": "",
     "tools": [
       {
-        "arguments": "generate --target stm32g4 --name dnn_model -m /home/ramanujan/git_repos/fractals-DNN/BMS-DNN/AI/model/dnn_model.h5 --compression low --verbosity 1 --workspace /tmp/mxAI_workspace4496399347227917771197484094512291 --output /home/ramanujan/.stm32cubemx/dnn_model_output",
+        "arguments": "validate --target stm32g4 --name dnn_model -m /home/ramanujan/git_repos/fractals-DNN/BMS-DNN/AI/model/dnn_model.h5 --compression low --verbosity 1 --workspace /tmp/mxAI_workspace4823706408460915381123302614365452 --output /home/ramanujan/.stm32cubemx/dnn_model_output",
         "environment": [
           "STATS_TYPE=X-CUBE-AI"
         ],
@@ -906,6 +907,13 @@
           }
         }
       ],
+      "exec_time": {
+        "counters": null,
+        "cycles": 0,
+        "cycles_by_macc": 0.0,
+        "duration_ms": 0.04625000187661499,
+        "percentage": 100.0
+      },
       "id": 0,
       "inputs": [
         123
@@ -918,6 +926,13 @@
             "use_bias": "True"
           },
           "description": "Dense",
+          "exec_time": {
+            "counters": [],
+            "cycles": 0,
+            "cycles_by_macc": 0.0,
+            "duration_ms": 0.0036250001285225153,
+            "percentage": 7.837837797700489
+          },
           "id": 13,
           "inputs": [
             123,
@@ -944,6 +959,7 @@
             "nonlinearity": "relu"
           },
           "description": "Nonlinearity",
+          "exec_time": {},
           "id": 14,
           "inputs": [
             125
@@ -970,6 +986,13 @@
             "use_bias": "True"
           },
           "description": "Dense",
+          "exec_time": {
+            "counters": [],
+            "cycles": 0,
+            "cycles_by_macc": 0.0,
+            "duration_ms": 0.00275000007241033,
+            "percentage": 5.9459458612493385
+          },
           "id": 15,
           "inputs": [
             127,
@@ -996,6 +1019,7 @@
             "nonlinearity": "relu"
           },
           "description": "Nonlinearity",
+          "exec_time": {},
           "id": 16,
           "inputs": [
             129
@@ -1022,6 +1046,13 @@
             "use_bias": "True"
           },
           "description": "Dense",
+          "exec_time": {
+            "counters": [],
+            "cycles": 0,
+            "cycles_by_macc": 0.0,
+            "duration_ms": 0.002875000092899427,
+            "percentage": 6.216216164854017
+          },
           "id": 17,
           "inputs": [
             131,
@@ -1048,6 +1079,7 @@
             "nonlinearity": "relu"
           },
           "description": "Nonlinearity",
+          "exec_time": {},
           "id": 18,
           "inputs": [
             133
@@ -1073,6 +1105,13 @@
             "use_bias": "True"
           },
           "description": "Dense",
+          "exec_time": {
+            "counters": [],
+            "cycles": 0,
+            "cycles_by_macc": 0.0,
+            "duration_ms": 0.0025000000605359674,
+            "percentage": 5.4054053169671805
+          },
           "id": 19,
           "inputs": [
             135,
@@ -1099,6 +1138,7 @@
             "nonlinearity": "relu"
           },
           "description": "Nonlinearity",
+          "exec_time": {},
           "id": 20,
           "inputs": [
             137
@@ -1124,6 +1164,13 @@
             "use_bias": "True"
           },
           "description": "Dense",
+          "exec_time": {
+            "counters": [],
+            "cycles": 0,
+            "cycles_by_macc": 0.0,
+            "duration_ms": 0.0031250001047737896,
+            "percentage": 6.756756709136175
+          },
           "id": 21,
           "inputs": [
             139,
@@ -1150,6 +1197,7 @@
             "nonlinearity": "relu"
           },
           "description": "Nonlinearity",
+          "exec_time": {},
           "id": 22,
           "inputs": [
             141
@@ -1175,6 +1223,13 @@
             "use_bias": "True"
           },
           "description": "Dense",
+          "exec_time": {
+            "counters": [],
+            "cycles": 0,
+            "cycles_by_macc": 0.0,
+            "duration_ms": 0.0036250001285225153,
+            "percentage": 7.837837797700489
+          },
           "id": 23,
           "inputs": [
             143,
@@ -1201,6 +1256,7 @@
             "nonlinearity": "sigmoid"
           },
           "description": "Nonlinearity",
+          "exec_time": {},
           "id": 24,
           "inputs": [
             145
@@ -1275,12 +1331,12 @@
       0,
       0
     ],
-    "kernel_flash": 11588,
-    "kernel_ram": 3472,
-    "series": "stm32g4",
-    "toolchain": "arm-none-eabi-gcc (15:14.2.rel1-1) 14.2.1 20241119",
-    "toolchain_flash": 780,
-    "toolchain_ram": 0,
+    "kernel_flash": null,
+    "kernel_ram": null,
+    "series": "generic",
+    "toolchain": null,
+    "toolchain_flash": null,
+    "toolchain_ram": null,
     "weights": 18948
   },
   "memory_pools": [
@@ -1319,7 +1375,7 @@
       "virtual": false
     },
     {
-      "address": "s_dnn_model_weights_array_u64",
+      "address": "NULL",
       "alignment": 0,
       "attributes": {
         "latency": "UNDEF",
@@ -1351,5 +1407,22 @@
       "user_allocated": false,
       "virtual": false
     }
-  ]
+  ],
+  "validation": {
+    "val_error": 0.000710238644387573,
+    "val_error_desc": "x-cross (l2r) #1",
+    "val_metrics": [
+      {
+        "acc": "n.a.",
+        "cos": 0.9999997019767761,
+        "desc": "X-cross #1",
+        "l2r": 0.000710238644387573,
+        "mae": 0.00031840504379943013,
+        "mean": 9.48011893342482e-06,
+        "nse": 0.9999675516351852,
+        "rmse": 0.0003918982401955873,
+        "std": 0.000412976136431098
+      }
+    ]
+  }
 }

@@ -22,3 +22,10 @@ rad.json
 TestResults.xml
 #BMS virtual environment
 bms_venv
+
+.metadata/
+.mxproject
+.project
+.settings/
+.cproject
+.ai
