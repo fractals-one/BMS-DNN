@@ -1,6 +1,6 @@
 ST Edge AI Core v2.2.0-20266 2adc00962
-Created date          : 2026-02-08 23:51:37
-Parameters            : generate --target stm32g4 --name network -m /home/ramanujan/git_repos/fractals-DNN/BMS-DNN/AI/model/dnn_model.h5 --compression low --verbosity 1 --workspace /tmp/mxAI_workspace5177672975303513568009658351745072 --output /home/ramanujan/.stm32cubemx/network_output
+Created date          : 2026-02-09 00:06:27
+Parameters            : generate --target stm32g4 --name network -m /home/ramanujan/git_repos/fractals-DNN/BMS-DNN/AI/model/dnn_model.h5 --compression low --verbosity 1 --workspace /tmp/mxAI_workspace5266700818976511659732976382159945 --output /home/ramanujan/.stm32cubemx/network_output
 
 Exec/report summary (generate)
 ----------------------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ compression        :   low
 options            :   allocate-inputs, allocate-outputs                                      
 optimization       :   balanced                                                               
 target/series      :   stm32g4                                                                
-workspace dir      :   /tmp/mxAI_workspace5177672975303513568009658351745072                  
+workspace dir      :   /tmp/mxAI_workspace5266700818976511659732976382159945                  
 output dir         :   /home/ramanujan/.stm32cubemx/network_output                            
 model_fmt          :   float                                                                  
 model_name         :   dnn_model                                                              
